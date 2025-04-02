@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Twitter/X Read More Expander Options</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    .option-group {
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 4px;
+      background-color: #f8f9fa;
+    }
+    .option-title {
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .option-description {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+    .shortcut-customization {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .shortcut-note {
+      font-size: 12px;
+      color: #666;
+      font-style: italic;
+    }
+    .browser-specific {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #e0e0e0;
+    }
+    .browser-title {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+  </style>
+  <script src="browser-polyfill.js"></script>
+</head>
+<body>
+  <h1>Twitter/X Read More Expander Options</h1>
+  
+  <div class="option-group">
+    <div class="option-title">Keyboard Shortcuts</div>
+    <div class="option-description">
+      You can customize the keyboard shortcuts for this extension:
+    </div>
+    
+    <div class="browser-specific" id="firefox-instructions">
+      <div class="browser-title">Firefox Instructions:</div>
+      <div class="shortcut-customization">
+        1. Go to <code>about:addons</code> in your Firefox browser
+      </div>
+      <div class="shortcut-customization">
+        2. Click the gear icon and select "Manage Extension Shortcuts"
+      </div>
+      <div class="shortcut-customization">
+        3. Find "Twitter/X Read More Expander" in the list
+      </div>
+      <div class="shortcut-customization">
+        4. Customize the shortcut for "Expand tweets once on current page"
+      </div>
+    </div>
+    
+    <div class="browser-specific" id="chrome-instructions">
+      <div class="browser-title">Chrome Instructions:</div>
+      <div class="shortcut-customization">
+        1. Go to <code>chrome://extensions/shortcuts</code> in your Chrome browser
+      </div>
+      <div class="shortcut-customization">
+        2. Find "Twitter/X Read More Expander" in the list
+      </div>
+      <div class="shortcut-customization">
+        3. Click in the shortcut input field
+      </div>
+      <div class="shortcut-customization">
+        4. Press the key combination you want to use
+      </div>
+    </div>
+    
+    <div class="shortcut-note">
+      Current default shortcut: Alt+Shift+R
+    </div>
+  </div>
+  
+  <script>
+    // Show only relevant instructions based on the browser
+    document.addEventListener('DOMContentLoaded', function() {
+      const isChrome = typeof browser === 'undefined';
+      
+      if (isChrome) {
+        document.getElementById('firefox-instructions').style.display = 'none';
+      } else {
+        document.getElementById('chrome-instructions').style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html> 

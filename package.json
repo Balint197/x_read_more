@@ -1,0 +1,19 @@
+{
+  "name": "twitter-x-read-more-expander",
+  "version": "1.0.0",
+  "description": "Automatically expands truncated tweets by clicking the 'Show more' button",
+  "scripts": {
+    "build:chrome": "node build.js chrome",
+    "build:firefox": "node build.js firefox",
+    "build:all": "npm run build:chrome && npm run build:firefox",
+    "package:chrome": "npm run build:chrome && node package.js chrome",
+    "package:firefox": "npm run build:firefox && node package.js firefox",
+    "package:all": "npm run package:chrome && npm run package:firefox"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "archiver": "^5.3.1",
+    "fs-extra": "^11.1.1"
+  }
+}
