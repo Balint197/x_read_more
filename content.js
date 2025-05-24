@@ -71,8 +71,15 @@ function clickReadMoreButton() {
     
     // Click each button found
     showMoreButtons.forEach(button => {
-      console.log("Read More Expander: Clicking button");
-      button.click();
+      // Check if the button or its parent contains a link to another tweet
+      const hasTweetLink = button.closest('a[href*="/status/"]') !== null;
+      
+      if (!hasTweetLink) {
+        console.log("Read More Expander: Clicking button");
+        button.click();
+      } else {
+        console.log("Read More Expander: Skipping button with tweet link");
+      }
     });
   } else {
     console.log("Read More Expander: No Show more buttons found");

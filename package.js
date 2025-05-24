@@ -20,7 +20,7 @@ if (browser !== 'chrome' && browser !== 'firefox') {
 
 // Define source and destination paths
 const sourceDir = `dist/${browser}`;
-const packageName = `twitter-x-read-more-expander-${browser}-1.0.zip`;
+const packageName = `twitter-x-read-more-expander-${browser}-1.0.${browser === 'firefox' ? 'xpi' : 'zip'}`;
 
 // Ensure the source directory exists
 if (!fs.existsSync(sourceDir)) {
@@ -31,7 +31,7 @@ if (!fs.existsSync(sourceDir)) {
 // Create output stream
 const output = fs.createWriteStream(packageName);
 const archive = archiver('zip', {
-  zlib: { level: 9 } // Maximum compression
+  zlib: { level: browser === 'firefox' ? 1 : 9 } // Use lower compression for Firefox
 });
 
 // Listen for all archive data to be written
